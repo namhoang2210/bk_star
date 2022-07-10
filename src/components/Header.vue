@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="bg-white">
-      <nav class="container px-6 md:px-[10%] py-6 mx-auto md:flex md:justify-between md:items-center">
+      <nav class="container px-4 lg:px-[8%] py-6  md:flex md:justify-between md:items-center w-full">
         <div class="flex items-center justify-between">
           <router-link to="/" class=" text-xl font-bold text-[#0d2f4b] md:text-2xl lg:text-3xl flex items-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:h-8 md:w-8 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -47,7 +47,7 @@
            <router-link to="/about">Về chúng tôi</router-link> 
           </li>
           <li class="text-sm lg:text-[16px] uppercase font-semibold text-gray-800 hover:text-blue-500">
-           <router-link to="/about">Tin tức</router-link> 
+           <router-link to="/news">Tin tức</router-link> 
           </li>
           <li class="text-sm lg:text-[16px] uppercase font-semibold text-gray-800 hover:text-blue-500">
            <router-link to="/about">Tư vấn du học</router-link> 
