@@ -2,7 +2,6 @@
 
 ### Install project
 ```
-git clone https://bangtx@bitbucket.org/paradigm_shift/jfga.git
 docker-compose run --rm backend bash
 poetry install
 
