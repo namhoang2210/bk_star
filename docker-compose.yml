@@ -1,0 +1,50 @@
+version: '3.7'
+
+services:
+
+  frontend:
+    container_name: ${PROJECT_NAME}_frontend
+    image: bangtx/bk_star_fe:latest
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      - './frontend:/app/frontend'
+      - './frontend/node_modules:/app/frontend/node_modules'
+    ports:
+      - '8000:8000'
+    expose:
+      - 8000
+    command: ["npm", "run", "serve", "--", "--port", "2000"]
+
+  backend:
+    container_name: ${PROJECT_NAME}_backend
+    image: bangtx/bk_star_be:latest
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    env_file: .env
+    volumes:
+      - ./backend:/app/backend
+    ports:
+      - '8100:8100'
+    depends_on:
+      - db
+    entrypoint: [ "poetry", "run" ]
+    command: [ "uvicorn", "main:app", "--reload", "--host", "0.0.0.0", "--port", "8100" ]
+
+  db:
+    container_name: ${PROJECT_NAME}_db
+    image: postgres:11
+    ports:
+      - "8200:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=default
+    volumes:
+      - db:/var/lib/postgresql/data
+
+volumes:
+  db:
+    driver: local

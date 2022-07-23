@@ -1,5 +1,5 @@
 <template>
-<div class="text-center lg:text-left bg-gray-100 text-gray-600 bg-white">
+<div class="text-center lg:text-left bg-gray-100 text-gray-600 bg-white mt-20">
   <div class="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
     <div class="mr-12 hidden lg:block">
       <span>Kết nối với chúng tôi:</span>
