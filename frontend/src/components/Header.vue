@@ -47,10 +47,10 @@
            <router-link to="/about">Về chúng tôi</router-link> 
           </li>
           <li class="text-sm lg:text-[16px] uppercase font-semibold text-gray-800 hover:text-blue-500">
-           <router-link to="/about">Tin tức</router-link> 
+           <router-link to="/news">Tin tức</router-link> 
           </li>
           <li class="text-sm lg:text-[16px] uppercase font-semibold text-gray-800 hover:text-blue-500">
-           <router-link to="/about">Tư vấn du học</router-link> 
+           <router-link to="/news">Tư vấn du học</router-link> 
           </li>
           <li class="text-sm lg:text-[16px] uppercase font-semibold text-gray-800 hover:text-blue-500">
            <router-link to="/about">Giáo dục steam</router-link> 

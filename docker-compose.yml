@@ -15,7 +15,7 @@ services:
       - '8000:8000'
     expose:
       - 8000
-    command: ["npm", "run", "serve", "--", "--port", "2000"]
+    command: ["npm", "run", "serve", "--", "--port", "8000"]
 
   backend:
     container_name: ${PROJECT_NAME}_backend

@@ -14,20 +14,33 @@
         data-bs-slide-to="1"
         aria-label="Slide 2"
       ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="2"
+        aria-label="Slide 3"
+      ></button>
     </div>
     <div class="carousel-inner relative w-full overflow-hidden">
       <div class="carousel-item active float-left w-full">
         <img
-          src="https://scontent.fhan5-3.fna.fbcdn.net/v/t39.30808-6/240491630_390643405907881_5641940386351270480_n.png?_nc_cat=106&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeHqtVFiz6zcohNHqNGHZ5YdK2kRL70JkK8raREvvQmQrwaHKtonr1cYNMmy-AAAcOqjLJUJP5vumAbxXMfSLmdC&_nc_ohc=Gn9VR-5AR0MAX_h1_PQ&_nc_ht=scontent.fhan5-3.fna&oh=00_AT_Rtjfa39C5WhQn1BC_FdalGyWDjuJFUfn_CxVrJzmxZQ&oe=62D033A0"
+          src="https://images.unsplash.com/photo-1657819307873-c57e45f65f6d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80"
           class="block w-full  h-[250px] md:h-[400px] lg:h-[600px] object-cover"
           alt="Banner 1"
         />
       </div>
       <div class="carousel-item float-left w-full">
         <img
-          src="https://scontent.fhan5-8.fna.fbcdn.net/v/t1.6435-9/103558363_152978349674389_1997969188172033568_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeFf5TK-ZuIR7Ov6jpJxXq9UE9JHPF0607kT0kc8XTrTuc82OAII4z8bjrgH11yXKZtTxbbCG_-CA6HYhTTVds-1&_nc_ohc=xeT_-Ry6bHwAX-i1ue_&tn=DEq0oQOlsqXiz2Kk&_nc_ht=scontent.fhan5-8.fna&oh=00_AT_B3BSBkDp6DMtTbjp4h9YCseXI6ylAL--u_t7sSMtE0Q&oe=62F10BB8"
+          src="https://images.unsplash.com/photo-1657659558323-08b7854ed766?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
           class="block w-full  h-[250px] md:h-[400px] lg:h-[600px] object-cover"
           alt="Banner 2"
+        />
+      </div>
+      <div class="carousel-item float-left w-full">
+        <img
+          src="https://images.unsplash.com/photo-1618171889969-0feeb769fe78?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          class="block w-full  h-[250px] md:h-[400px] lg:h-[600px] object-cover"
+          alt="Banner 3"
         />
       </div>
     </div>
