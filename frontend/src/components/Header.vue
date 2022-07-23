@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed w-full top-0 z-50">
+  <div class="sticky top-0 z-50">
     <div class="bg-white">
       <nav class="container px-6 md:px-[10%] py-6 mx-auto md:flex md:justify-between md:items-center">
         <div class="flex items-center justify-between">

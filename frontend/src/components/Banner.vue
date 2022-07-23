@@ -1,5 +1,5 @@
 <template>
-    <div id="carouselExampleIndicators" class="carousel slide relative mt-[74px]" data-bs-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide relative" data-bs-ride="carousel">
     <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
       <button type="button"
         data-bs-target="#carouselExampleIndicators"

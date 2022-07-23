@@ -53,7 +53,7 @@
                               
   </div>
 
-  <div class="bg-[#011858] mt-14  py-14">
+  <div class="bg-[#0c2f4b] mt-14  py-14">
                 <div class="text-4xl font-semibold text-white text-center uppercase">Thành tựu nổi bật</div>
                 <hr class="h-2 w-[50px] mx-auto bg-white mt-8 rounded-full">
                 <div class="px-4 px-[13%] pt-8">
