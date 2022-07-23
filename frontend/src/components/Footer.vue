@@ -1,6 +1,6 @@
 <template>
-<div class="text-center lg:text-left bg-gray-100 text-gray-600 bg-white">
-  <div class="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
+<div class="text-center lg:text-left bg-gray-100 text-gray-600  ">
+  <div class="flex justify-center items-center lg:justify-between p-6 md:px-[10%] border-b border-gray-300">
     <div class="mr-12 hidden lg:block">
       <span>Kết nối với chúng tôi:</span>
     </div>
@@ -57,7 +57,7 @@
       </a>
     </div>
   </div>
-  <div class="mx-6 py-10 text-center md:text-left">
+  <div class="px-6 md:px-[10%] py-10 text-center md:text-left">
     <div class="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       <div class="">
         <router-link to="/" class=" text-xl font-bold text-[#0d2f4b] md:text-2xl pb-2 md:justify-start justify-center flex items-center">

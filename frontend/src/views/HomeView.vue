@@ -15,7 +15,7 @@
 
   <div class="grid grid-cols-2 xl:grid-cols-4 mt-12 bg-white  mx-4 md:mx-[15%]">
     <div>
-        <img  class=" ease-in duration-500 h-full object-cover"
+        <img  class=" ease-in duration-500 h-[350px] w-full object-cover"
         src="https://images.unsplash.com/photo-1638153534717-fb17b6d19040?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80" alt="">
     </div>
     <div class="p-6">
@@ -25,7 +25,7 @@
         <div class="text-2xl font-bold py-4">Giáo dục STEAM</div>
         <p class="text-gray-500">Kinh nghiệm phát hành game mobile với 5 ngôn ngữ chính: Tiếng Anh, Tiếng Việt, Tiếng Thái, Tiếng Trung Quốc và Tiếng Indonesia.</p>
     </div>
-    <div> <img class=" ease-in duration-500 h-full object-cover" 
+    <div> <img class=" ease-in duration-500 h-[350px] w-full object-cover" 
     src="https://images.unsplash.com/photo-1652376933844-2b4b44523549?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDR8YWV1NnJMLWo2ZXd8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" alt=""> </div>
     <div class="p-6">
         <svg xmlns="source.unsplash.com/collection/1051/2" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
@@ -43,7 +43,7 @@
         <p class="text-gray-500">Đội ngũ bản địa hóa với năng lực chuyên sâu về ngôn ngữ, văn hóa và thấu hiểu thị trường mục tiêu.</p>
     </div>
     <div> 
-      <img  class="ease-in duration-500 h-full object-cover" 
+      <img  class="ease-in duration-500 h-[350px] w-full object-cover" 
       src="https://images.unsplash.com/photo-1657672733176-b48c9b0eec0f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDI0fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt=""> 
     </div>
     <div class="p-6">
@@ -54,12 +54,18 @@
         <p class="text-gray-500">Hệ sinh thái của Funtap cho phép kết nối tới hàng triệu Game thủ tại Việt Nam và trên khắp thế giới.</p>
     </div>
     <div> 
-      <img  class="ease-in duration-500 h-full object-cover" 
+      <img  class="ease-in duration-500 h-[350px] w-full object-cover" 
       src="https://images.unsplash.com/photo-1612886652368-3dfdfa8c4cbe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDh8YWV1NnJMLWo2ZXd8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" alt=""> 
     </div>
   </div>
-
-  <div class=" bg-white px-[15%] mt-16">
+    <section
+        class="container mt-14 flex items-center justify-center h-[300px] md:h-[400px] lg:h-[520px] m-auto w-full bg-fixed bg-center bg-cover custom-img"
+        >
+        <div class="p-5 text-2xl text-white bg-purple-300 bg-opacity-50 rounded-xl">
+            Cái Parralax CSS này hay nhưng chưa biết nhét content j vào đây
+        </div>
+    </section>
+  <div class=" bg-white px-[15%] ">
     <div class="text-4xl font-semibold text-gray-800 text-center pt-14 uppercase">Tin tức - Sự kiện</div>
     <hr class="h-2 w-[50px] mx-auto bg-[#011858] mt-8 rounded-full">
     <div class="py-10 grid lg:grid-cols-3 gap-6">
@@ -282,3 +288,8 @@ export default {
   }
 }
 </script>
+<style>
+.custom-img {
+  background-image: url("https://images.unsplash.com/photo-1657524433787-a30cefc92661?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80");
+}
+</style>

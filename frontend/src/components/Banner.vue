@@ -1,5 +1,5 @@
 <template>
-    <div id="carouselExampleIndicators" class="carousel slide relative" data-bs-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide relative mt-[74px]" data-bs-ride="carousel">
     <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
       <button type="button"
         data-bs-target="#carouselExampleIndicators"
@@ -25,21 +25,21 @@
       <div class="carousel-item active float-left w-full">
         <img
           src="https://images.unsplash.com/photo-1657819307873-c57e45f65f6d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80"
-          class="block w-full  h-[250px] md:h-[400px] lg:h-[600px] object-cover"
+          class="block w-full  h-[250px] md:h-[400px] lg:h-[500px] object-cover"
           alt="Banner 1"
         />
       </div>
       <div class="carousel-item float-left w-full">
         <img
           src="https://images.unsplash.com/photo-1657659558323-08b7854ed766?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-          class="block w-full  h-[250px] md:h-[400px] lg:h-[600px] object-cover"
+          class="block w-full  h-[250px] md:h-[400px] lg:h-[500px] object-cover"
           alt="Banner 2"
         />
       </div>
       <div class="carousel-item float-left w-full">
         <img
           src="https://images.unsplash.com/photo-1618171889969-0feeb769fe78?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-          class="block w-full  h-[250px] md:h-[400px] lg:h-[600px] object-cover"
+          class="block w-full  h-[250px] md:h-[400px] lg:h-[500px] object-cover"
           alt="Banner 3"
         />
       </div>
