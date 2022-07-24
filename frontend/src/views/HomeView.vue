@@ -163,7 +163,6 @@
                                   d="M13 7l5 5m0 0l-5 5m5-5H6" />
                         </svg>
                     </a>
-
                 </div>
             </div>
         </div>
@@ -275,9 +274,7 @@
 
 <script>
 // @ is an alias to /src
-import Header from '@/components/Header.vue'
-import Banner from '@/components/Banner.vue'
-import Footer from '@/components/Footer.vue'
+import { Header, Banner, Footer } from '@/components'
 
 export default {
   name: 'HomeView',
