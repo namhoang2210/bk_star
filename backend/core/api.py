@@ -1,7 +1,8 @@
 from fastapi import APIRouter, Depends
 from utils.auth import Auth
 from core.endpoints import (
-    test
+    test,
+    category
 )
 
 api_router = APIRouter()
@@ -11,4 +12,9 @@ api_router.include_router(
     prefix="/test",
     tags=["test"],
     dependencies=[Depends(Auth)]
+)
+api_router.include_router(
+    category.router,
+    prefix="/category",
+    tags=["category"]
 )
