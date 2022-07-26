@@ -1,7 +1,7 @@
 <template>
   <Header msg="Welcome to Website"/>
 
-  <div class="lg:grid lg:grid-cols-4 lg:gap-6 px-4 md:px-[13%] mt-16">
+  <div class="lg:grid lg:grid-cols-4 lg:gap-6 px-4 md:px-[13%] mt-36">
     <div class="col-span-2">
       <div class="text-xl text-blue-700 font-semibold">Sologan</div>
       <div class="text-4xl py-4 text-gray-800 font-bold uppercase">Chỗ này là slogan cty</div>

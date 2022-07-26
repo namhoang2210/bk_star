@@ -1,7 +1,7 @@
 <template>
   <Header msg="Welcome to Website"/>
 
-<div class="bg-gray-100 py-16 lg:px-[13%] md:px-10 px-4">
+  <div class="bg-gray-100 py-16 lg:px-[13%] md:px-10 px-4 mt-20">
     <div class=" text-2xl text-blue-700 uppercase">
         <router-link to="/">Trang chủ</router-link> &gt; <a href="">Tin tức</a>
     </div>
