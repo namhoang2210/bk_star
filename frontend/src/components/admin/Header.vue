@@ -1,4 +1,4 @@
-<template>
+  <template>
   <div>
     <div class="bg-white">
       <nav class="container px-4 lg:px-[8%] py-6  md:flex md:justify-between md:items-center w-full">
@@ -43,6 +43,9 @@
             md:mt-0
           "
         >
+          <li class="text-sm lg:text-[16px] uppercase font-semibold text-gray-800 hover:text-blue-500">
+           <router-link to="/admin/category">Quản lí danh mục</router-link>
+          </li>
           <li class="text-sm lg:text-[16px] uppercase font-semibold text-gray-800 hover:text-blue-500">
            <router-link to="/admin/posts">Quản lí bài đăng</router-link> 
           </li>

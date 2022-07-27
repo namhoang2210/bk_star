@@ -5,7 +5,7 @@
               :src="post.image" alt="blog">
           <div class="p-6">
             <h1 class="mb-2 text-lg font-medium  h-[60px] text-ellipsis overflow-hidden text-gray-900">
-              <a class="hover:text-blue-600" href="">{{post.title}}</a>
+              <a class="hover:text-blue-600" href=""> {{post.title}} </a>
             </h1>
             <div class="flex gap-1 items-center text-sm text-gray-500 mb-2">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"

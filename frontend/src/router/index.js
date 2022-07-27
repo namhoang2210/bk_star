@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '../views/client/HomeView.vue'
 
 const routes = [
   {
@@ -9,41 +9,27 @@ const routes = [
   },
   {
     path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () => import('../views/client/AboutView.vue')
   },
   {
     path: '/news',
-    name: 'news',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/NewsView.vue')
+    component: () => import('../views/client/NewsView.vue')
   },
   {
     path: '/admin',
-    name: 'admin',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/admin/HomeView.vue')
+    component: () => import('../views/admin/HomeView.vue')
   },
   {
     path: '/admin/posts',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/admin/Posts/list.vue')
+    component: () => import('../views/admin/Posts/list.vue')
   },
   {
     path: '/admin/posts/create',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/admin/Posts/create.vue')
+    component: () => import('../views/admin/Posts/create.vue')
+  },
+  {
+    path: '/admin/category',
+    component: () => import('../views/admin/Category/list.vue')
   }
 ]
 
