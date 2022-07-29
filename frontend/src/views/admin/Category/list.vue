@@ -56,7 +56,7 @@
 
                                 </td>
                                 <td class="px-6 py-4 flex justify-center">
-                                    <a href="http://funtap-laravel.herokuapp.com/admin/posts/edit/2" class="px-4 py-1 text-sm text-white bg-blue-400 rounded">Edit</a>
+                                  <button class="px-4 py-1 text-sm text-white bg-blue-400 rounded">Edit</button>
                                 </td>
                                 <td class="px-6 py-4">
                                     <a href="http://funtap-laravel.herokuapp.com/admin/posts/delete/2" class="px-4 py-1 text-sm text-white bg-red-400 rounded">Delete</a>
@@ -80,7 +80,7 @@
 
                                 </td>
                                 <td class="px-6 py-4 flex justify-center">
-                                    <a href="http://funtap-laravel.herokuapp.com/admin/posts/edit/1" class="px-4 py-1 text-sm text-white bg-blue-400 rounded">Edit</a>
+                                    <button class="px-4 py-1 text-sm text-white bg-blue-400 rounded">Edit</button>
                                 </td>
                                 <td class="px-6 py-4">
                                     <a href="" class="px-4 py-1 text-sm text-white bg-red-400 rounded">Delete</a>
