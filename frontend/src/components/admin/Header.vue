@@ -43,11 +43,8 @@
             md:mt-0
           "
         >
-          <li class="text-sm lg:text-[16px] uppercase font-semibold text-gray-800 hover:text-blue-500">
-           <router-link to="/admin/category">Quản lí danh mục</router-link>
-          </li>
-          <li class="text-sm lg:text-[16px] uppercase font-semibold text-gray-800 hover:text-blue-500">
-           <router-link to="/admin/posts">Quản lí bài đăng</router-link> 
+          <li v-for="(menu, index) in menus" :key="index" class="text-sm lg:text-[16px] uppercase font-semibold text-gray-800 hover:text-blue-500">
+            <router-link :to="menu.to">{{ menu.text }}</router-link>
           </li>
         </ul>
       </nav>
@@ -55,14 +52,19 @@
   </div>
 </template>
 <script>
+import { urlPath } from '@/utils'
+
 export default {
-  name: 'Header',
   props: {
     msg: String
   },
   data() {
     return {
       showMenu: false,
+      menus: [
+        { text: 'Quản lí danh mục', to: urlPath.ADMIN_CATEGORY.path },
+        { text: 'Quản lí bài đăng', to: urlPath.ADMIN_POST.path }
+      ]
     };
   },
 }

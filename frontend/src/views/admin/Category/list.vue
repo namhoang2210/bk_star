@@ -4,7 +4,12 @@
    <div class="bg-white m-10 rounded-lg min-h-[450px] p-10">
         <div class="md:flex justify-between items-center">
             <div class="text-xl font-semibold text-purple-700">Danh sách danh mục</div>
-            <router-link class="text-white mt-6 md:mt-0 px-4 py-2 bg-green-500 rounded hover:bg-green-600" to="/admin/posts/create">Thêm bài viết</router-link>
+            <button
+                class="text-white mt-6 md:mt-0 px-4 py-2 bg-green-500 rounded hover:bg-green-600"
+                @click="clickAddCategory()"
+            >
+                Thêm Danh Mục
+            </button>
         </div>
 
         <div class="w-full">
@@ -92,11 +97,24 @@
 
 <script>
 // @ is an alias to /src
-import {defineComponent} from "vue";
-import {AdminHeader} from '@/components'
+import { defineComponent } from "vue";
+import { urlPath } from '@/utils'
+import { AdminHeader } from '@/components'
+
 export default defineComponent({
   components: {
     AdminHeader
+  },
+  setup(props, { root }) {
+    const { $router } = root
+    const clickAddCategory = () => {
+      $router.push({
+        path: urlPath.ADMIN_CATEGORY_DETAIL
+      })
+    }
+    return {
+      clickAddCategory
+    }
   }
 })
 </script>

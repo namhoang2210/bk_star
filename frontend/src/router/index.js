@@ -1,34 +1,34 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/client/HomeView.vue'
+import { urlPath } from '@/utils/index'
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
+    path: urlPath.HOME.path,
     component: HomeView
   },
   {
-    path: '/about',
+    path: urlPath.ABOUT.path,
     component: () => import('../views/client/AboutView.vue')
   },
   {
-    path: '/news',
+    path: urlPath.NEW.path,
     component: () => import('../views/client/NewsView.vue')
   },
   {
-    path: '/admin',
+    path: urlPath.ADMIN.path,
     component: () => import('../views/admin/HomeView.vue')
   },
   {
-    path: '/admin/posts',
+    path: urlPath.ADMIN_POST.path,
     component: () => import('../views/admin/Posts/list.vue')
   },
   {
-    path: '/admin/posts/create',
+    path: urlPath.ADMIN_POST_DETAIL.path,
     component: () => import('../views/admin/Posts/create.vue')
   },
   {
-    path: '/admin/category',
+    path: urlPath.ADMIN_CATEGORY.path,
     component: () => import('../views/admin/Category/list.vue')
   }
 ]
