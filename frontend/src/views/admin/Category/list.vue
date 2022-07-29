@@ -100,16 +100,17 @@
 import { defineComponent } from "vue";
 import { urlPath } from '@/utils'
 import { AdminHeader } from '@/components'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
   components: {
     AdminHeader
   },
-  setup(props, { root }) {
-    const { $router } = root
+  setup() {
+    const router = useRouter()
     const clickAddCategory = () => {
-      $router.push({
-        path: urlPath.ADMIN_CATEGORY_DETAIL
+      router.push({
+        path: urlPath.ADMIN_CATEGORY_DETAIL.path
       })
     }
     return {
