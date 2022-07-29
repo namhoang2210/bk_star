@@ -12,11 +12,26 @@
 <script>
 // @ is an alias to /src
 import Header from '@/components/admin/Header.vue'
+import { bk_axios } from '@/plugins'
 
 export default {
   name: 'HomeView',
   components: {
     Header
+  },
+  setup() {
+
+    const getData = async () => {
+      try {
+        const response = await bk_axios.get('/test')
+        console.log(response)
+      } catch (e) {
+        console.log(e)
+      }
+    }
+
+    getData()
+    return {}
   }
 }
 </script>
