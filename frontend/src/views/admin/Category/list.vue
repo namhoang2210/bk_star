@@ -97,10 +97,11 @@
 
 <script>
 // @ is an alias to /src
-import { defineComponent } from "vue";
+import {defineComponent, ref} from "vue";
 import { urlPath } from '@/utils'
 import { AdminHeader } from '@/components'
 import { useRouter } from 'vue-router'
+import {bk_axios} from "@/plugins";
 
 export default defineComponent({
   components: {
@@ -113,6 +114,17 @@ export default defineComponent({
         path: urlPath.ADMIN_CATEGORY_DETAIL.path
       })
     }
+
+    const getData = async () => {
+      try {
+        const response = await bk_axios.get('/category')
+        console.log(response)
+      } catch (e) {
+        console.log(e)
+      }
+    }
+
+    getData()
     return {
       clickAddCategory
     }
