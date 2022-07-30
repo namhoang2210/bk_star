@@ -3,10 +3,10 @@
 
   <div class="bg-gray-100 py-16 lg:px-[13%] md:px-10 px-4 mt-20">
     <div class=" text-2xl text-blue-700 uppercase">
-        <router-link to="/">Trang chủ</router-link> &gt; <a href="">Tin tức</a>
+      <router-link to="/">Trang chủ</router-link> &gt; <a href="">Tin tức</a>
     </div>
     <div class="py-4 grid lg:grid-cols-3 md:grid-cols-2 gap-4">
-      <sub-post v-for="post in subPosts" :key="post.id" :post="post" />
+      <sub-post v-for="post in subPosts" :key="post.id" :post="post"/>
     </div>
   </div>
   <Footer msg="This is Footer"/>
@@ -14,7 +14,7 @@
 
 <script>
 // @ is an alias to /src
-import { Header, Footer,SubPost } from '@/components'
+import {Header, Footer, SubPost} from '@/components'
 
 export default {
   name: 'HomeView',
@@ -24,7 +24,7 @@ export default {
     SubPost
   },
   setup() {
-    const subPosts =[
+    const subPosts = [
       {
         id: 1,
         title: 'Bài viết 1',

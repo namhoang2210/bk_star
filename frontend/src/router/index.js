@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/client/HomeView.vue'
 import { urlPath } from '@/utils/index'
+import {LIST_POSTS} from "@/utils/urlPath";
 
 const routes = [
   {
@@ -8,12 +9,8 @@ const routes = [
     component: HomeView
   },
   {
-    path: urlPath.ABOUT.path,
-    component: () => import('../views/client/AboutView.vue')
-  },
-  {
-    path: urlPath.NEW.path,
-    component: () => import('../views/client/NewsView.vue')
+    path: urlPath.LIST_POSTS.path,
+    component: () => import('../views/client/ListPosts.vue')
   },
   {
     path: urlPath.ADMIN.path,

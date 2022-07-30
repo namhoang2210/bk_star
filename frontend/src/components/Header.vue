@@ -47,6 +47,7 @@
         >
           <li v-for="category in categories" :key="category.id"
               class="text-sm lg:text-[16px] uppercase font-semibold text-gray-800 hover:text-blue-500"
+              @click="onClickCategory(category)"
           >
             {{ category.name }}
           </li>
@@ -56,10 +57,15 @@
   </div>
 </template>
 <script>
-export default {
+import { defineComponent } from "vue";
+import { useRouter } from 'vue-router'
+import { urlPath } from '@/utils'
+
+export default defineComponent({
   props: {
     categories: {
-      type: Array
+      type: Array,
+      required: true
     }
   },
   data() {
@@ -68,7 +74,18 @@ export default {
     };
   },
   setup() {
-    return {}
+    const router = useRouter()
+    const onClickCategory = (path) => {
+      router.push({
+        path: urlPath.LIST_POSTS.path,
+        query: {
+          category: path.id
+        }
+      })
+    }
+    return {
+      onClickCategory
+    }
   }
-}
+})
 </script>

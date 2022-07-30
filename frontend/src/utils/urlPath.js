@@ -1,6 +1,5 @@
 const HOME = { path: '/', name: 'Home' }
-const ABOUT = {  path: '/about', name: 'About' }
-const NEW = {  path: '/news', name: 'New' }
+const LIST_POSTS = {  path: '/posts', name: 'ListPosts' }
 const ADMIN = {  path: '/admin', name: 'Admin' }
 const ADMIN_POST = {  path: '/admin/posts', name: 'AdminPost' }
 const ADMIN_POST_DETAIL = {  path: '/admin/posts/detail', name: 'AdminPostCreate' }
@@ -9,8 +8,7 @@ const ADMIN_CATEGORY_DETAIL = {  path: '/admin/category/detail', name: 'AdminCat
 
 export {
     HOME,
-    ABOUT,
-    NEW,
+    LIST_POSTS,
     ADMIN,
     ADMIN_POST,
     ADMIN_POST_DETAIL,
