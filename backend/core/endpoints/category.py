@@ -11,6 +11,11 @@ def get_category():
     return Category.get_list()
 
 
+@router.get('/{id}')
+def get_one(id: int):
+    return Category.get_one(id)
+
+
 @router.post('/')
 def create_category(new_category: CategoryCreate):
     category = Category.create(**new_category.dict())

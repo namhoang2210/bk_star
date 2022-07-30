@@ -71,10 +71,11 @@
 
 <script>
 // @ is an alias to /src
-import {defineComponent} from "vue";
-import {urlPath} from '@/utils'
+import {defineComponent, ref, onMounted} from "vue";
+import {endpoint, urlPath} from '@/utils'
 import {AdminHeader} from '@/components'
 import {useRouter} from 'vue-router'
+import {bk_axios} from "@/plugins";
 
 export default defineComponent({
   components: {
@@ -83,16 +84,27 @@ export default defineComponent({
   setup() {
     const router = useRouter()
 
-    const categories = [
-      { id: 1, name: 'Dang Muc 1', time: '10:30:24 - 06/24/2022' },
-      { id: 1, name: 'Dang Muc 2', time: '10:30:24 - 06/24/2022' },
-    ]
+    const categories = ref([])
 
     const clickAddCategory = () => {
       router.push({
-        path: urlPath.ADMIN_CATEGORY_DETAIL.path
+        path: urlPath.ADMIN_CATEGORY_DETAIL.path,
+        query: {
+          id: 1
+        }
       })
     }
+
+    const getCategory = async () => {
+      try {
+        const response = await bk_axios.get(endpoint.CATEGORY)
+        categories.value = response.data
+      } catch (e) {
+        const error = e
+      }
+    }
+
+    getCategory()
     return {
       clickAddCategory,
       categories

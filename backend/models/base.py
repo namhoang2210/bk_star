@@ -11,17 +11,12 @@ class BaseModel(Model):
 
     @classmethod
     def get_one(cls, id: int):
-        try:
-            data = cls.get_by_id(id)
-            if data.active is False:
-                raise HTTPException(
-                    status_code=404, detail=f"{cls.__name__} not found"
-                )
-            return data
-        except DoesNotExist:
-            raise HTTPException(
-                status_code=404, detail=f"{cls.__name__} not found"
-            )
+        data = cls.select().where(cls.id == id, cls.active).dicts()
+        if list(data):
+            return data.get()
+        raise HTTPException(
+            status_code=404, detail=f"{cls.__name__} not found"
+        )
 
     @classmethod
     def get_list(cls):
