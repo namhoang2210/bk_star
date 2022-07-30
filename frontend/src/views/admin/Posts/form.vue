@@ -6,8 +6,9 @@
                 <div class="text-xl font-semibold text-purple-700">Tạo bài đăng</div>
                 <button class="text-white px-4 py-2 bg-green-500 rounded hover:bg-green-600" onclick="history.back()" type="submit">Quay về</button>
             </div>
-            <div id="editor"></div>
-
+            <div id="editor" class="mt-2">
+              <vue-editor/>
+            </div>
         </div>
     </div>
 </template>
@@ -16,10 +17,12 @@
 // @ is an alias to /src
 import { defineComponent } from 'vue'
 import { AdminHeader } from '@/components'
+import { VueEditor } from 'vue3-editor'
 
 export default defineComponent({
   components: {
-    AdminHeader
+    AdminHeader,
+    VueEditor
   }
 })
 </script>

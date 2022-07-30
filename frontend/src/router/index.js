@@ -25,11 +25,15 @@ const routes = [
   },
   {
     path: urlPath.ADMIN_POST_DETAIL.path,
-    component: () => import('../views/admin/Posts/create.vue')
+    component: () => import('../views/admin/Posts/form.vue')
   },
   {
     path: urlPath.ADMIN_CATEGORY.path,
     component: () => import('../views/admin/Category/list.vue')
+  },
+  {
+    path: urlPath.ADMIN_CATEGORY_DETAIL.path,
+    component: () => import('../views/admin/Category/form.vue')
   }
 ]
 
