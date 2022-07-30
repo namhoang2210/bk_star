@@ -6,7 +6,7 @@
         <div class="text-xl font-semibold text-purple-700">Danh sách danh mục</div>
         <button
             class="text-white mt-6 md:mt-0 px-4 py-2 bg-green-500 rounded hover:bg-green-600"
-            @click="clickAddCategory()"
+            @click="goToCategory()"
         >
           Thêm Danh Mục
         </button>
@@ -54,7 +54,12 @@
 
               </td>
               <td class="px-6 py-4 flex justify-center">
-                <button class="px-4 py-1 text-sm text-white bg-blue-400 rounded">Edit</button>
+                <button
+                    @click="goToCategory(category.id)"
+                    class="px-4 py-1 text-sm text-white bg-blue-400 rounded"
+                >
+                  Edit
+                </button>
               </td>
               <td class="px-6 py-4">
                 <button class="px-4 py-1 text-sm text-white bg-red-400 rounded">Delete</button>
@@ -71,7 +76,7 @@
 
 <script>
 // @ is an alias to /src
-import {defineComponent, ref, onMounted} from "vue";
+import {defineComponent, ref} from "vue";
 import {endpoint, urlPath} from '@/utils'
 import {AdminHeader} from '@/components'
 import {useRouter} from 'vue-router'
@@ -86,11 +91,11 @@ export default defineComponent({
 
     const categories = ref([])
 
-    const clickAddCategory = () => {
+    const goToCategory = (id = 0) => {
       router.push({
         path: urlPath.ADMIN_CATEGORY_DETAIL.path,
         query: {
-          id: 1
+          id: id
         }
       })
     }
@@ -106,7 +111,7 @@ export default defineComponent({
 
     getCategory()
     return {
-      clickAddCategory,
+      goToCategory,
       categories
     }
   }
