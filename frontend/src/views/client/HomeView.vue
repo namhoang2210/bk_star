@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header msg="Welcome to Website"/>
+    <Header :categories="categories"/>
     <Banner class="mt-20" msg="This is banner"/>
     <div class="lg:flex justify-between px-4 md:px-[15%] mt-10 md:mt-16">
       <div class="font-bold lg:text-5xl text-center lg:text-start text-2xl pb-6">Chỗ này là slogan</div>
@@ -16,7 +16,7 @@
   </div>
 
   <div class="grid  xl:grid-cols-2 mt-12 bg-white  mx-4 md:mx-[15%]">
-    <sub-category v-for="(category,index) in subCategories" :key="category.id" :category="category" :index-category="index"/>
+    <sub-category v-for="(category,index) in categories" :key="category.id" :category="category" :index-category="index"/>
   </div>
   <section
       class="container mt-14 flex items-center justify-center h-[300px] md:h-[400px] lg:h-[520px] m-auto w-full bg-fixed bg-center bg-cover custom-img"
@@ -38,8 +38,10 @@
 
 <script>
 // @ is an alias to /src
-import {defineComponent} from "vue";
+import {defineComponent, ref} from "vue";
 import {Header, Banner, Footer, SubCategory, SubPost} from '@/components'
+import {endpoint} from '@/utils'
+import {bk_axios} from "@/plugins";
 
 export default defineComponent({
   name: 'HomeView',
@@ -51,32 +53,16 @@ export default defineComponent({
     SubPost
   },
   setup() {
-    const subCategories = [
-      {
-        id: 1,
-        name: 'Giáo dục STEAM',
-        img: 'https://images.unsplash.com/photo-1638153534717-fb17b6d19040?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80',
-        title: 'Kinh nghiệm phát hành game mobile với 5 ngôn ngữ chính: Tiếng Anh, Tiếng Việt, Tiếng Thái, Tiếng Trung Quốc và Tiếng Indonesia.'
-      },
-      {
-        id: 2,
-        name: 'Tư vấn du học',
-        img: 'https://images.unsplash.com/photo-1652376933844-2b4b44523549?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDR8YWV1NnJMLWo2ZXd8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60',
-        title: 'Tự hào mang lại dịch vụ giải trí với chất lượng tuyệt hảo cho hơn 42 triệu khách hàng toàn cầu.'
-      },
-      {
-        id: 3,
-        name: 'Ôn Thi',
-        img: 'https://images.unsplash.com/photo-1657672733176-b48c9b0eec0f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDI0fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
-        title: 'Kinh nghiệm phát hành game mobile với 5 ngôn ngữ chính: Tiếng Anh, Tiếng Việt, Tiếng Thái, Tiếng Trung Quốc và Tiếng Indonesia.'
-      },
-      {
-        id: 4,
-        name: 'Toán Cao Cấp',
-        img: 'https://images.unsplash.com/photo-1657672733176-b48c9b0eec0f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDI0fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
-        title: 'Kinh nghiệm phát hành game mobile với 5 ngôn ngữ chính: Tiếng Anh, Tiếng Việt, Tiếng Thái, Tiếng Trung Quốc và Tiếng Indonesia.'
+    const categories = ref([])
+
+    const getData = async () => {
+      try {
+        const response = await bk_axios.get(endpoint.CATEGORY)
+        categories.value = response.data
+      } catch (e) {
+        const error = e
       }
-    ]
+    }
 
     const subPosts =[
       {
@@ -94,8 +80,11 @@ export default defineComponent({
         time: '22-10-2000'
       },
     ]
+
+    getData()
+
     return {
-      subCategories, subPosts
+      categories, subPosts
     }
   }
 })
