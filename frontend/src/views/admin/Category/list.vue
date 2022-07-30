@@ -40,7 +40,7 @@
             <tbody class="bg-white">
             <tr v-for="category in categories" :key="category.id" class="whitespace-nowrap ">
               <td class="px-6 py-4 text-sm text-gray-500 text-center">
-                1
+                {{ category.id }}
               </td>
               <td class="px-6 py-4 max-w-[300px] truncate">
                 <button class="text-sm text-gray-900 font-medium text-blue-600">

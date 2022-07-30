@@ -57,15 +57,13 @@ export default defineComponent({
     console.log(id, typeof(id))
 
     const category = ref({
+      id: null,
       name: null,
       description: null,
       image: null
     })
 
-    const onSave = async () => {
-      if (category.value.name === null || category.value.description === null || category.value.image === null) {
-        return
-      }
+    const create = async () => {
       try {
         await bk_axios.post(endpoint.CATEGORY, category.value)
         alert('create successful')
@@ -75,6 +73,26 @@ export default defineComponent({
       } catch (e) {
         const error = e
       }
+    }
+
+    const update = async () => {
+      try {
+        await bk_axios.put(endpoint.CATEGORY, category.value)
+        alert('update successful')
+        await router.push({
+          path: urlPath.ADMIN_CATEGORY.path
+        })
+      } catch (e) {
+        const error = e
+      }
+    }
+
+    const onSave = async () => {
+      if (category.value.name === null || category.value.description === null || category.value.image === null) {
+        return
+      }
+      if (id === '0') await create()
+      if (id !== '0') await update()
     }
 
     const getCategory = async () => {
