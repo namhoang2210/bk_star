@@ -9,13 +9,14 @@ CREATE TABLE category
   CONSTRAINT pkey_category PRIMARY KEY (id)
 );
 
+DROP TABLE IF EXISTS post CASCADE;
 CREATE TABLE post
 (
   id bigserial NOT NULL,
-  category_id integer,
+  category_id bigint,
   title text,
   content text,
   image text,
   active boolean DEFAULT TRUE,
-  CONSTRAINT pkey_category PRIMARY KEY (id)
+  CONSTRAINT pkey_post PRIMARY KEY (id)
 );

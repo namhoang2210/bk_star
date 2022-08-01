@@ -27,6 +27,7 @@ def create_post(new_post: PostUpdate):
     post = Post.update_one(new_post.id, new_post.dict())
     return post
 
+
 @router.get('/category/{category}')
 def get_list_by_category(category: int):
     return Post.get_posts_by_category(category)

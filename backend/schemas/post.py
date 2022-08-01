@@ -3,9 +3,9 @@ from schemas.base import Schema
 
 class PostBase(Schema):
     title: str
-    category_id: int
+    category: int
     content: str
-    image: str
+    image: str = None
 
 
 class PostCreate(PostBase):

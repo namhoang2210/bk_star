@@ -17,14 +17,14 @@
                 </div>
                 <label for="default" class="block mt-6 mb-2 text-sm font-medium text-gray-900 ">Danh mục bải đăng</label>
                 <select
-                    v-model="posts.category_id"
+                    v-model="posts.category"
                     id="default"
                     class="bg-gray-50 border border-gray-300 text-gray-900 mb-6 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                 >
                     <option
                         v-for="category in categories" :key="category.id"
                         :value="category.id"
-                        :selected="posts.category_id === category.id"
+                        :selected="posts.category === category.id"
                     >
                         {{ category.name }}
                     </option>
@@ -69,7 +69,7 @@ export default defineComponent({
     const { id } = route.query
 
     const posts = ref({
-      category_id: null,
+      category: null,
       content: null,
       title: null,
       image: null
@@ -111,9 +111,10 @@ export default defineComponent({
     }
 
     const onSave = async () => {
-      if (posts.value.title === null || posts.value.content === null || posts.value.image === null || posts.value.category_id === null) {
+      if (posts.value.title === null || posts.value.content === null || posts.value.category === null) {
         return
       }
+      console.log(id === '0', id)
       if (id === '0') await create()
       if (id !== '0') await update()
     }

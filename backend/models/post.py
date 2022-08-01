@@ -1,5 +1,5 @@
 from models.base import BaseModel
-from peewee import  (
+from peewee import (
     CharField,
     IntegerField,
     ForeignKeyField,
@@ -8,9 +8,10 @@ from peewee import  (
 )
 from models.category import Category
 
+
 class Post(BaseModel):
     title = CharField()
-    category_id = CharField()
+    category = ForeignKeyField(Category, column_name='category_id')
     content = CharField()
     image = CharField()
 
@@ -27,7 +28,7 @@ class Post(BaseModel):
                 cls.title,
                 cls.content
             ).join(
-                Category, JOIN.LEFT_OUTER, on=Category.id == cls.category_id
+                Category, JOIN.LEFT_OUTER, on=Category.id == cls.category
             ).where(
                 Category.active, cls.active
             ).dicts()

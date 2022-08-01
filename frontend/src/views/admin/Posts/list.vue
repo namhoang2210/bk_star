@@ -62,7 +62,6 @@ export default defineComponent({
     AdminSubPost
   },
   setup() {
-
     const posts = ref([])
     const getPost = async () => {
       try {
@@ -76,9 +75,13 @@ export default defineComponent({
     getPost()
 
     const router = useRouter()
-    const clickAddPosts = () => {
+
+    const clickAddPosts = (id = 0) => {
       router.push({
-        path: urlPath.ADMIN_POST_DETAIL.path
+        path: urlPath.ADMIN_POST_DETAIL.path,
+        query: {
+          id: id
+        }
       })
     }
 
