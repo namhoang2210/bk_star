@@ -1,12 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/client/HomeView.vue'
 import { urlPath } from '@/utils/index'
-import {LIST_POSTS} from "@/utils/urlPath";
 
 const routes = [
   {
     path: urlPath.HOME.path,
     component: HomeView
+  },
+  {
+    path: urlPath.ABOUT.path,
+    component: () => import('../views/client/AboutView.vue')
   },
   {
     path: urlPath.LIST_POSTS.path,

@@ -8,24 +8,24 @@
             </div>
             <div id="editor">
                 <div class="mt-6">
-                    <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Tên Danh Mục</label>
+                    <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 ">Tên Danh Mục</label>
                     <input
                         v-model="category.name"
-                        type="text" id="default-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        type="text" id="default-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                     >
                 </div>
                 <div class="mt-6">
-                    <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Mô Tả Danh Mục</label>
+                    <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 ">Mô Tả Danh Mục</label>
                     <input
                         v-model="category.description"
-                        type="text" id="default-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        type="text" id="default-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                     >
                 </div>
                 <div class="mt-6">
-                    <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Ảnh Danh Mục</label>
+                    <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 ">Ảnh Danh Mục</label>
                     <input
                         v-model="category.image"
-                        type="text" id="default-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        type="text" id="default-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                     >
                 </div>
                 <button

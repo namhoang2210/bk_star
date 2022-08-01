@@ -45,6 +45,12 @@
             md:mt-0
           "
         >
+          <li
+              class="text-sm lg:text-[16px] uppercase font-semibold text-gray-800 hover:text-blue-500"
+              @click="onClickAbout"
+          >
+            Về chúng tôi
+          </li>
           <li v-for="category in categories" :key="category.id"
               class="text-sm lg:text-[16px] uppercase font-semibold text-gray-800 hover:text-blue-500"
               @click="onClickCategory(category)"
@@ -74,6 +80,7 @@ export default defineComponent({
     };
   },
   setup() {
+
     const router = useRouter()
     const onClickCategory = (path) => {
       router.push({
@@ -83,8 +90,15 @@ export default defineComponent({
         }
       })
     }
+
+    const onClickAbout = () => {
+      router.push({
+        path: urlPath.ABOUT.path,
+      })
+    }
     return {
-      onClickCategory
+      onClickCategory,
+      onClickAbout
     }
   }
 })

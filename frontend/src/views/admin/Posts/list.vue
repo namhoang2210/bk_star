@@ -38,7 +38,7 @@
                         </tr>
                         </thead>
                         <tbody class="bg-white">
-                           <AdminSubPost v-for="post in subPosts" :key="post.id" :post="post"/>
+                           <AdminSubPost v-for="post in posts" :key="post.id" :post="post"/>
                         </tbody>
                     </table>
                 </div>
@@ -50,10 +50,11 @@
 
 <script>
 // @ is an alias to /src
-import { defineComponent } from "vue";
+import { defineComponent, ref} from "vue";
 import { AdminHeader, AdminSubPost } from '@/components'
 import { useRouter } from 'vue-router'
-import { urlPath } from '@/utils'
+import { endpoint, urlPath } from '@/utils'
+import {bk_axios} from "@/plugins";
 
 export default defineComponent({
   components: {
@@ -61,22 +62,18 @@ export default defineComponent({
     AdminSubPost
   },
   setup() {
-    const subPosts =[
-      {
-        id: 1,
-        title: 'Bài viết 1',
-        image: 'https://images.unsplash.com/photo-1638153534717-fb17b6d19040?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80',
-        content: 'Kinh nghiệm phát hành game mobile với 5 ngôn ngữ chính: Tiếng Anh, Tiếng Việt, Tiếng Thái, Tiếng Trung Quốc và Tiếng Indonesia.',
-        time: '22-10-2000'
-      },
-      {
-        id: 2,
-        title: 'Bài viết 2',
-        image: 'https://images.unsplash.com/photo-1658527859107-66022662d851?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw3fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
-        content: 'Kinh nghiệm phát hành game mobile với 5 ngôn ngữ chính: Tiếng Anh, Tiếng Việt, Tiếng Thái, Tiếng Trung Quốc và Tiếng Indonesia.',
-        time: '22-10-2000'
-      },
-    ]
+
+    const posts = ref([])
+    const getPost = async () => {
+      try {
+        const response = await bk_axios.get(endpoint.POST)
+        posts.value = response.data
+      } catch (e) {
+        const error = e
+      }
+    }
+
+    getPost()
 
     const router = useRouter()
     const clickAddPosts = () => {
@@ -86,7 +83,7 @@ export default defineComponent({
     }
 
     return {
-      subPosts,
+      posts,
       clickAddPosts
     }
   }
