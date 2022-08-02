@@ -1,5 +1,5 @@
 <template>
-   <div class="">
+   <div class="" @click="goToDetail()">
         <div class="border-2 border-gray-200 rounded-lg mb-4">
           <img class="object-cover object-center w-full lg:h-48 md:h-36 rounded-t-lg"
               :src="post.image" alt="blog">
@@ -38,13 +38,31 @@
 
 <script>
 import { defineComponent } from "vue";
+import { urlPath } from '@/utils'
+import {useRouter, useRoute} from "vue-router";
 
 export default defineComponent({
   props: {
     post: { type: Object, required: true }
   },
-  setup() {
-    return {}
+  setup(props) {
+    const router = useRouter()
+    const route = useRoute()
+    const { categoryId } = route.params
+
+    const goToDetail = () => {
+      router.push({
+        name: urlPath.POSTS_DETAIL.name,
+        params: {
+          categoryId: categoryId,
+          postsId: props.post.id
+        }
+      })
+      // window.open('http://funtap-laravel.herokuapp.com/news/2')
+    }
+    return {
+      goToDetail
+    }
   }
 })
 

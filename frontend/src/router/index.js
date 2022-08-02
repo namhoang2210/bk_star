@@ -12,6 +12,7 @@ const routes = [
     component: () => import('../views/client/AboutView.vue')
   },
   {
+    name: urlPath.LIST_POSTS.name,
     path: urlPath.LIST_POSTS.path,
     component: () => import('../views/client/ListPosts.vue')
   },
@@ -34,6 +35,11 @@ const routes = [
   {
     path: urlPath.ADMIN_CATEGORY_DETAIL.path,
     component: () => import('../views/admin/Category/form.vue')
+  },
+    {
+    path: urlPath.POSTS_DETAIL.path,
+    name: urlPath.POSTS_DETAIL.name,
+    component: () => import('../views/client/PostsDetail.vue')
   }
 ]
 

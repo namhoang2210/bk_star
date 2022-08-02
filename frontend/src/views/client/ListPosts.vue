@@ -1,12 +1,11 @@
-  <template>
-  <Header msg="Welcome to Website"/>
-
+<template>
+  <Header/>
   <div class="bg-gray-100 py-16 lg:px-[13%] md:px-10 px-4 mt-20">
     <div class=" text-2xl text-blue-700 uppercase">
       <router-link to="/">Trang chủ</router-link> &gt; <a href="">Tin tức</a>
     </div>
     <div class="py-4 grid lg:grid-cols-3 md:grid-cols-2 gap-4">
-      <sub-post v-for="post in subPosts" :key="post.id" :post="post"/>
+      <sub-post v-for="post in posts" :key="post.id" :post="post"/>
     </div>
   </div>
   <Footer msg="This is Footer"/>
@@ -17,9 +16,8 @@
 import {Header, Footer, SubPost} from '@/components'
 import { onMounted, ref } from 'vue'
 import { bk_axios } from '@/plugins'
-import { endpoint } from '@/utils'
-import { useRoute } from 'vue-router'
-import subPost from "@/components/SubPost";
+import {endpoint, urlPath} from '@/utils'
+import { useRoute, useRouter } from 'vue-router'
 
 export default {
   name: 'HomeView',
@@ -30,25 +28,24 @@ export default {
   },
   setup() {
     const route = useRoute()
-    const { category } = route.query
+    const { categoryId } = route.params
 
-    const subPosts = ref([])
+    const posts = ref([])
     const getPosts = async () => {
       try {
-        const response = await bk_axios.get(`${endpoint.POST/category}${category}`)
-        subPost.value = response.data
-        console.log(subPosts)
+        const response = await bk_axios.get(`${endpoint.POST}category/${categoryId}`)
+        posts.value = response.data
       } catch (e) {
         const error = e
       }
     }
+
     onMounted(async () => {
       await getPosts()
-      if (category !== '0')
-        getPosts()
     })
+
     return {
-      subPosts
+      posts
     }
   }
 }

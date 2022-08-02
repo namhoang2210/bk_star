@@ -63,30 +63,22 @@
   </div>
 </template>
 <script>
-import { defineComponent } from "vue";
+import { defineComponent, onMounted, ref } from "vue";
 import { useRouter } from 'vue-router'
-import { urlPath } from '@/utils'
+import { endpoint, urlPath } from '@/utils'
+import { bk_axios } from '@/plugins'
 
 export default defineComponent({
-  props: {
-    categories: {
-      type: Array,
-      required: true
-    }
-  },
-  data() {
-    return {
-      showMenu: false,
-    };
-  },
   setup() {
-
+    const categories = ref([])
+    const showMenu = ref(true)
     const router = useRouter()
     const onClickCategory = (path) => {
+      console.log('ss')
       router.push({
-        path: urlPath.LIST_POSTS.path,
-        query: {
-          category: path.id
+        name: urlPath.LIST_POSTS.name,
+        params: {
+          categoryId: path.id
         }
       })
     }
@@ -96,9 +88,22 @@ export default defineComponent({
         path: urlPath.ABOUT.path,
       })
     }
+
+    const getData = async () => {
+      try {
+        const response = await bk_axios.get(endpoint.CATEGORY)
+        categories.value = response.data
+      } catch (e) {
+        const error = e
+      }
+    }
+
+    onMounted(getData)
     return {
       onClickCategory,
-      onClickAbout
+      onClickAbout,
+      showMenu,
+      categories
     }
   }
 })

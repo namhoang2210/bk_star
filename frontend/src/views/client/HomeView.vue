@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header :categories="categories"/>
+    <Header/>
     <Banner class="mt-20" msg="This is banner"/>
     <div class="lg:flex justify-between px-4 md:px-[15%] mt-10 md:mt-16">
       <div class="font-bold lg:text-5xl text-center lg:text-start text-2xl pb-6">Chỗ này là slogan</div>
@@ -38,10 +38,10 @@
 
 <script>
 // @ is an alias to /src
-import {defineComponent, ref} from "vue";
+import {defineComponent} from "vue";
 import {Header, Banner, Footer, SubCategory, SubPost} from '@/components'
-import {endpoint} from '@/utils'
-import {bk_axios} from "@/plugins";
+// import {endpoint} from '@/utils'
+// import {bk_axios} from "@/plugins";
 
 export default defineComponent({
   name: 'HomeView',
@@ -53,17 +53,6 @@ export default defineComponent({
     SubPost
   },
   setup() {
-    const categories = ref([])
-
-    const getData = async () => {
-      try {
-        const response = await bk_axios.get(endpoint.CATEGORY)
-        categories.value = response.data
-      } catch (e) {
-        const error = e
-      }
-    }
-
     const subPosts =[
       {
         id: 1,
@@ -81,10 +70,8 @@ export default defineComponent({
       },
     ]
 
-    getData()
-
     return {
-      categories, subPosts
+      subPosts
     }
   }
 })
