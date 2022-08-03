@@ -12,6 +12,10 @@ const routes = [
     component: () => import('../views/client/AboutView.vue')
   },
   {
+    path: urlPath.COURSES.path,
+    component: () => import('../views/client/CourseView.vue')
+  },
+  {
     name: urlPath.LIST_POSTS.name,
     path: urlPath.LIST_POSTS.path,
     component: () => import('../views/client/ListPosts.vue')

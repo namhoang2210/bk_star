@@ -45,17 +45,10 @@
             md:mt-0
           "
         >
-          <li
+          <li v-for="category in Categories" :key="category.id"
               class="text-sm lg:text-[16px] uppercase font-semibold text-gray-800 hover:text-blue-500"
-              @click="onClickAbout"
           >
-            Về chúng tôi
-          </li>
-          <li v-for="category in categories" :key="category.id"
-              class="text-sm lg:text-[16px] uppercase font-semibold text-gray-800 hover:text-blue-500"
-              @click="onClickCategory(category)"
-          >
-            {{ category.name }}
+            <router-link :to="category.route">{{category.name}}</router-link>
           </li>
         </ul>
       </nav>
@@ -69,42 +62,70 @@ import { endpoint, urlPath } from '@/utils'
 import { bk_axios } from '@/plugins'
 
 export default defineComponent({
-  setup() {
-    const categories = ref([])
-    const showMenu = ref(true)
-    const router = useRouter()
-    const onClickCategory = (path) => {
-      console.log('ss')
-      router.push({
-        name: urlPath.LIST_POSTS.name,
-        params: {
-          categoryId: path.id
-        }
-      })
-    }
-
-    const onClickAbout = () => {
-      router.push({
-        path: urlPath.ABOUT.path,
-      })
-    }
-
-    const getData = async () => {
-      try {
-        const response = await bk_axios.get(endpoint.CATEGORY)
-        categories.value = response.data
-      } catch (e) {
-        const error = e
+  // setup() {
+  //   const categories = ref([])
+  //   const showMenu = ref(true)
+  //   const router = useRouter()
+  //   const onClickCategory = (path) => {
+  //     console.log('ss')
+  //     router.push({
+  //       name: urlPath.LIST_POSTS.name,
+  //       params: {
+  //         categoryId: path.id
+  //       }
+  //     })
+  //   }
+  //
+  //   const onClickAbout = () => {
+  //     router.push({
+  //       path: urlPath.ABOUT.path,
+  //     })
+  //   }
+  //
+  //   const getData = async () => {
+  //     try {
+  //       const response = await bk_axios.get(endpoint.CATEGORY)
+  //       categories.value = response.data
+  //     } catch (e) {
+  //       const error = e
+  //     }
+  //   }
+  //
+  //   onMounted(getData)
+  //   return {
+  //     onClickCategory,
+  //     onClickAbout,
+  //     showMenu,
+  //     categories
+  //   }
+  // }
+   setup() {
+      const Categories = [
+      {
+        id: 1,
+        name: 'Về chúng tôi',
+        route: '/about'
+      },
+      {
+        id: 2,
+        name: 'Tin tức',
+        route: '/news'
+      },
+      {
+        id: 3,
+        name: 'Giáo dục steam',
+        route: '/courses'
+      },
+      {
+        id: 4,
+        name: 'Liên hệ',
+        route: '/about'
       }
-    }
+    ]
 
-    onMounted(getData)
-    return {
-      onClickCategory,
-      onClickAbout,
-      showMenu,
-      categories
-    }
-  }
+      return {
+        Categories
+      }
+   }
 })
 </script>
