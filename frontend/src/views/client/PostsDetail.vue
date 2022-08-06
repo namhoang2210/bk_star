@@ -13,13 +13,12 @@ import { defineComponent, onMounted, ref } from "vue";
 import { endpoint } from '@/utils'
 import { bk_axios } from '@/plugins'
 import { useRoute } from "vue-router";
-import { Footer, Header, SubPost } from "@/components";
+import { Footer, Header } from "@/components";
 
 export default defineComponent({
   components: {
     Header,
-    Footer,
-    SubPost
+    Footer
   },
   setup() {
     const route = useRoute()
