@@ -15,6 +15,7 @@ CREATE TABLE post
   id bigserial NOT NULL,
   category_id bigint,
   title text,
+  sub_content text,
   content text,
   image text,
   active boolean DEFAULT TRUE,

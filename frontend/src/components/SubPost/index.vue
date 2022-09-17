@@ -18,7 +18,7 @@
 
             </div>
             <p class="mb-2 text-sm tracking-wide text-gray-700 h-[100px] text-ellipsis overflow-hidden">
-              {{post.content}}
+              {{post.sub_content}}
             </p>
             <div class="flex items-center ">
               <a href=""
@@ -39,7 +39,7 @@
 <script>
 import { defineComponent } from "vue";
 import { urlPath } from '@/utils'
-import {useRouter, useRoute} from "vue-router";
+import {useRouter} from "vue-router";
 
 export default defineComponent({
   props: {
@@ -47,18 +47,14 @@ export default defineComponent({
   },
   setup(props) {
     const router = useRouter()
-    const route = useRoute()
-    const { categoryId } = route.params
 
     const goToDetail = () => {
       router.push({
         name: urlPath.POSTS_DETAIL.name,
         params: {
-          categoryId: categoryId,
           postsId: props.post.id
         }
       })
-      // window.open('http://funtap-laravel.herokuapp.com/news/2')
     }
     return {
       goToDetail

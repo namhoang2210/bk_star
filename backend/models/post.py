@@ -13,6 +13,7 @@ class Post(BaseModel):
     title = CharField()
     category = ForeignKeyField(Category, column_name='category_id')
     content = CharField()
+    sub_content = CharField()
     image = CharField()
 
     class Meta:
@@ -26,7 +27,8 @@ class Post(BaseModel):
                 Category.name,
                 cls.image,
                 cls.title,
-                cls.content
+                cls.content,
+                cls.sub_content
             ).join(
                 Category, JOIN.LEFT_OUTER, on=Category.id == cls.category
             ).where(

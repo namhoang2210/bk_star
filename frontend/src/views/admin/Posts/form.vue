@@ -36,6 +36,13 @@
                         type="text" id="default-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                     >
                 </div>
+                <div class="mt-6 mb-6">
+                    <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 ">Sub content</label>
+                    <input
+                        v-model="posts.sub_content"
+                        type="text" id="default-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                    >
+                </div>
                 <vue-editor v-model="posts.content"/>
                 <button
                     @click="onSave()"

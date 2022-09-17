@@ -3,11 +3,14 @@
     <Header/>
     <Banner class="mt-20" msg="This is banner"/>
     <div class="lg:flex justify-between px-4 md:px-[15%] mt-10 md:mt-16">
-      <div class="font-bold lg:text-5xl text-center lg:text-start text-2xl pb-6">Chỗ này là slogan</div>
+      <div class="font-bold lg:text-5xl text-center lg:text-start text-2xl pb-6">GIEO MẦM SÁNG TẠO - DẪN HƯỚNG ĐAM MÊ</div>
       <div class="lg:w-1/2">
-        <p>Giới thiệu blabla...Thành lập tháng 5/2015 với sứ mệnh mang đến trải nghiệm giải trí và giá trị tri thức cho
-          cộng đồng thông qua các sản phẩm công nghệ, Funtap đã phát triển nhanh chóng và trở thành một trong những nhà
-          phát hành game trên di động hàng đầu Việt Nam .</p>
+        <p>
+          Bk-star thành lập năm 2014 mới mục đích đinh hưỡng-hưỡng dẫn cho các sinh viên back khoa tham gia cuộc
+          thi robocon. Sau này với tâm huyết định hướng nghề nghiệp sớm và truyền dạy những kiến thức khoa học cho
+          những học sinh cấp 1, 2, 3,
+          TS.Phạm Văn Khương đã mở rộng Bk-star thành công ty chuyên về giáo dục, giáo dục stem và du học
+        </p>
         <router-link to="/about" class="flex justify-center lg:justify-start">
           <button class="px-6 py-2 rounded bg-[#011858] text-white hover:bg-blue-700 mt-6 lg:mt-4">Về chúng tôi</button>
         </router-link>
@@ -22,7 +25,7 @@
       class="container mt-14 flex items-center justify-center h-[300px] md:h-[400px] lg:h-[520px] m-auto w-full bg-fixed bg-center bg-cover custom-img"
   >
     <div class="p-5 text-2xl text-white bg-purple-300 bg-opacity-50 rounded-xl">
-      Cái Parralax CSS này hay nhưng chưa biết nhét content j vào đây
+      Đến với Bk-star để tiếp thực chiến với lập trình từ sớm
     </div>
   </section>
   <div class=" bg-white px-[15%] ">
@@ -38,10 +41,10 @@
 
 <script>
 // @ is an alias to /src
-import {defineComponent} from "vue";
+import {defineComponent, ref, onMounted} from "vue";
 import {Header, Banner, Footer, SubCategory, SubPost} from '@/components'
-// import {endpoint} from '@/utils'
-// import {bk_axios} from "@/plugins";
+import {endpoint} from '@/utils'
+import {bk_axios} from "@/plugins";
 
 export default defineComponent({
   name: 'HomeView',
@@ -53,22 +56,20 @@ export default defineComponent({
     SubPost
   },
   setup() {
-    const subPosts =[
-      {
-        id: 1,
-        title: 'Bài viết 1',
-        image: 'https://images.unsplash.com/photo-1638153534717-fb17b6d19040?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80',
-        content: 'Kinh nghiệm phát hành game mobile với 5 ngôn ngữ chính: Tiếng Anh, Tiếng Việt, Tiếng Thái, Tiếng Trung Quốc và Tiếng Indonesia.',
-        time: '22-10-2000'
-      },
-      {
-        id: 2,
-        title: 'Bài viết 2',
-        image: 'https://images.unsplash.com/photo-1658527859107-66022662d851?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw3fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
-        content: 'Kinh nghiệm phát hành game mobile với 5 ngôn ngữ chính: Tiếng Anh, Tiếng Việt, Tiếng Thái, Tiếng Trung Quốc và Tiếng Indonesia.',
-        time: '22-10-2000'
-      },
-    ]
+    const subPosts = ref([])
+
+    const getData = async () => {
+      try {
+        const { data } = await bk_axios.get(endpoint.POST)
+        subPosts.value = data
+      } catch (e) {
+        console.log(e)
+      }
+    }
+
+    onMounted(() => {
+      getData()
+    })
 
     return {
       subPosts

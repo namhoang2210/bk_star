@@ -33,7 +33,7 @@ export default {
     const posts = ref([])
     const getPosts = async () => {
       try {
-        const response = await bk_axios.get(`${endpoint.POST}category/${categoryId}`)
+        const response = await bk_axios.get(`${endpoint.POST}`)
         posts.value = response.data
       } catch (e) {
         const error = e

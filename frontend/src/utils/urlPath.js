@@ -1,8 +1,8 @@
 const HOME = { path: '/', name: 'Home' }
 const ABOUT = { path: '/about', name: 'About' }
 const COURSES = { path: '/courses', name: 'Courses' }
-const LIST_POSTS = {  path: '/posts/:categoryId', name: 'ListPosts' }
-const POSTS_DETAIL = {  path: '/posts/:categoryId/:postsId', name: 'PostsDetail' }
+const LIST_POSTS = {  path: '/news', name: 'ListPosts' }
+const POSTS_DETAIL = {  path: '/posts/:postsId', name: 'PostsDetail' }
 const ADMIN = {  path: '/admin', name: 'Admin' }
 const ADMIN_POST = {  path: '/admin/posts', name: 'AdminPost' }
 const ADMIN_POST_DETAIL = {  path: '/admin/posts/detail', name: 'AdminPostCreate' }

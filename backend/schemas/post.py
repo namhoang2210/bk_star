@@ -5,6 +5,7 @@ class PostBase(Schema):
     title: str
     category: int
     content: str
+    sub_content: str
     image: str = None
 
 
